@@ -1,4 +1,4 @@
-//игра в кости
+//РёРіСЂР° РІ РєРѕСЃС‚Рё
 #include <iostream>
 #include <ctime>
 #include <clocale>
@@ -13,16 +13,16 @@ int main()
 	setlocale(LC_ALL,"Russian");
 	while (playerpoints <= 50 && enemypoints <= 50)
 	{
-		cout << "ваши кости:\n";
+		cout << "РІР°С€Рё РєРѕСЃС‚Рё:\n";
 		playerThrow(playerpoints);
-		cout << "кости соперника:\n";
+		cout << "РєРѕСЃС‚Рё СЃРѕРїРµСЂРЅРёРєР°:\n";
 		enemyThrow(enemypoints);
-		cout << "ваше число очков: " << playerpoints << "  число очков вашего соперника: " << enemypoints << '\n';
+		cout << "РІР°С€Рµ С‡РёСЃР»Рѕ РѕС‡РєРѕРІ: " << playerpoints << "  С‡РёСЃР»Рѕ РѕС‡РєРѕРІ РІР°С€РµРіРѕ СЃРѕРїРµСЂРЅРёРєР°: " << enemypoints << '\n';
 		if (playerpoints >= 50 || enemypoints >= 50) 
 		{
-			if (playerpoints > enemypoints) cout << "вы победили"; 
-				else if (enemypoints > playerpoints) cout << "вы проиграли"; 
-					else cout << "ничья";
+			if (playerpoints > enemypoints) cout << "РІС‹ РїРѕР±РµРґРёР»Рё"; 
+				else if (enemypoints > playerpoints) cout << "РІС‹ РїСЂРѕРёРіСЂР°Р»Рё"; 
+					else cout << "РЅРёС‡СЊСЏ";
 					cout << '\n';
 		}
 		system("PAUSE");
@@ -63,4 +63,3 @@ void graphics(int value)
 	}
 
 }
-
