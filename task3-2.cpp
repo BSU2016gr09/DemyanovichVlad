@@ -22,18 +22,15 @@ void printA(int A[], int N)
 	int i = 0;
 	while (i<N)
 	{
-		cout << A[i] << "  ";
-		i++;
+		cout << A[i++] << "  ";
 	}
 }
 void initA(int A[], int N)
 {
 	int i = 0;
-
-	while (i<N)
+        while (i<N)
 	{
-		A[i] = rand() % 10;
-		i++;
+		A[i++] = rand() % 10;
 	}
 }
 int checkA(int A[], int N)
