@@ -18,25 +18,25 @@ int main()
 	double A[size],element1;
 	char B[size], element = 40;
 	element1 = (rand() % 100) / 10.0 + 1.0;
-	cout << "\nìàññèâ ñèìâîëîâ:\n";
+	cout << "\nÐ¼Ð°ÑÑÐ¸Ð² ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð²:\n";
 	initAChar(B, size);
 	printAChar(B, size);
-	cout << "\nïîñëå 2 ïóøà:\n";
+	cout << "\nÐ¿Ð¾ÑÐ»Ðµ 2 Ð¿ÑƒÑˆÐ°:\n";
 	pushChar(B, size, element);
 	pushChar(B, size, 60);
     printAChar(B, size);
-	cout << "\nïîñëå 2 pop'a:\n";
+	cout << "\nÐ¿Ð¾ÑÐ»Ðµ 2 pop'a:\n";
 	popChar(B, size);
 	popChar(B, size);
 	printAChar(B, size);
-	cout << "\nìàññèâ âåùåñòâåííûõ ÷èñåë:\n";
+	cout << "\nÐ¼Ð°ÑÑÐ¸Ð² Ð²ÐµÑ‰ÐµÑÑ‚Ð²ÐµÐ½Ð½Ñ‹Ñ… Ñ‡Ð¸ÑÐµÐ»:\n";
 	initADouble(A, size);
 	printADouble(A,size);
-	cout << "\nïîñëå 2 ïóøà:\n";
+	cout << "\nÐ¿Ð¾ÑÐ»Ðµ 2 Ð¿ÑƒÑˆÐ°:\n";
 	pushDouble(A, size, element1);
 	pushDouble(A, size, element1);
 	printADouble(A, size);
-	cout << "\nïîñëå 2 pop'a:\n";
+	cout << "\nÐ¿Ð¾ÑÐ»Ðµ 2 pop'a:\n";
 	popDouble(A, size);
 	popDouble(A, size);
 	printADouble(A, size);
@@ -46,7 +46,7 @@ void popDouble(double A[], int size)
 {
 	int top = size, i = size - 1;
 	if (top = 0) {
-		cout << "ñòýê ïóñò"; return;
+		cout << "ÑÑ‚ÑÐº Ð¿ÑƒÑÑ‚"; return;
 	}
 	while (i >= 0)
 	{
@@ -87,7 +87,7 @@ void popChar(char A[], int size)
 {
 	int top = size, i = size - 1;
 	if (top = 0) {
-		cout << "ñòýê ïóñò"; return;
+		cout << "ÑÑ‚ÑÐº Ð¿ÑƒÑÑ‚"; return;
 	}
 	while (i >= 0)
 	{
