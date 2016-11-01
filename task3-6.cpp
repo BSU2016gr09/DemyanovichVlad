@@ -14,7 +14,7 @@ int main()
 	char  polishNotation[size];
 	double stack[size],topElementOfStack,secondElementOfStack;
 	int i = 0,top=size-1;
-	cout << "ââåäèòå ïîëüñêóþ çàïèñü ÷èñëà\n";
+	cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾Ð»ÑŒÑÐºÑƒÑŽ Ð·Ð°Ð¿Ð¸ÑÑŒ Ñ‡Ð¸ÑÐ»Ð°\n";
 	cin >> polishNotation;
 	
 	
@@ -30,7 +30,7 @@ int main()
 	}
 
 
-	cout <<"Îòâåò:"<< stack[top];
+	cout <<"ÐžÑ‚Ð²ÐµÑ‚:"<< stack[top];
 	system("pause");
 }
 void push(double A[], int N, char element)
@@ -81,7 +81,7 @@ double culc(double a, double b, char symb)
 	case('+'): rez = a + b; break;
 	case('-'): rez = b-a; break;
 	case('/'): rez = b/a; break;
-	default: cout << "ôóíêöèÿ åùå íå ðåàëèçîâàíà";
+	default: cout << "Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ ÐµÑ‰Ðµ Ð½Ðµ Ñ€ÐµÐ°Ð»Ð¸Ð·Ð¾Ð²Ð°Ð½Ð°";
 	};
 	return(rez);
 }
