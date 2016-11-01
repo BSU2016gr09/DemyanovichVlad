@@ -44,7 +44,7 @@ int main()
 }
 void popDouble(double A[], int size)
 {
-	int top = size, i = size - 1;
+	int top = size-1, i = size - 1;
 	if (top = 0) {
 		cout << "стэк пуст"; return;
 	}
@@ -85,7 +85,7 @@ void printADouble(double A[], int N)
 }
 void popChar(char A[], int size)
 {
-	int top = size, i = size - 1;
+	int top = size-1, i = size - 1;
 	if (top = 0) {
 		cout << "стэк пуст"; return;
 	}
