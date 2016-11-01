@@ -11,7 +11,7 @@ int main()
 	srand(time(NULL));
 	char line[] = "(aa[b(c)ddd]e{ee})";
 	int size = strlen(line);
-	if (trueOrfalseBrackets(line, size) == 1) cout << "ïðàâèëüíî"; else cout << "íå ïðàâèëüíî";;
+	if (trueOrfalseBrackets(line, size) == 1) cout << "Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾"; else cout << "Ð½Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾";;
 	system("PAUSE");
 }
 
@@ -19,7 +19,7 @@ void pop(char A[], int size)
 {
 	int top = size-1, i = size - 1;
 	if (top = 0) {
-		cout << "ñòýê ïóñò"; return;
+		cout << "ÑÑ‚ÑÐº Ð¿ÑƒÑÑ‚"; return;
 	}
 	while (i >= 0)
 	{
