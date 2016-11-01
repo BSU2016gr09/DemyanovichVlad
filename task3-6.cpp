@@ -1,6 +1,5 @@
 #include <iostream>
 #include <clocale>
-#include <ctime>
 void initA(char A[], int N);
 void printA(char A[], int N);
 void push(double A[], int N, char element);
