@@ -81,7 +81,6 @@ double culc(double a, double b, char symb)
 	case('+'): rez = a + b; break;
 	case('-'): rez = b-a; break;
 	case('/'): rez = b/a; break;
-	default: cout << "функция еще не реализована";
 	};
 	return(rez);
 }
