@@ -44,13 +44,13 @@ int main()
 }
 void popDouble(double A[], int size)
 {
-	int top = size-1, i = size - 1;
+	int top = size-1, i = size - 2;
 	if (top = 0) {
 		cout << "стэк пуст"; return;
 	}
 	while (i >= 0)
 	{
-		swap(A[i%(size-1) + 1], A[i]);
+		A[i+ 1]= A[i];
 		i--;
 	}
 	A[0] = 0;
@@ -58,9 +58,9 @@ void popDouble(double A[], int size)
 void pushDouble(double A[], int size, int element)
 {
 	int i = 0, top = size - 1;
-	while (i < size)
+	while (i < (size-1))
 	{
-		swap(A[i%top + 1], A[i]);
+		A[i]= A[i+1];
 		i++;
 	}
 	A[top] = element;
@@ -85,13 +85,13 @@ void printADouble(double A[], int N)
 }
 void popChar(char A[], int size)
 {
-	int top = size-1, i = size - 1;
+	int top = size-1, i = size - 2;
 	if (top = 0) {
 		cout << "стэк пуст"; return;
 	}
 	while (i >= 0)
 	{
-		swap(A[i%(size-1) + 1], A[i]);
+		A[i + 1]= A[i];
 		i--;
 	}
 	A[0] = 0;
@@ -99,9 +99,9 @@ void popChar(char A[], int size)
 void pushChar(char A[], int N, char element)
 {
 	int i = 0;
-	while (i <N)
+	while (i <(N-1))
 	{
-		swap(A[i], A[i%(N-1) + 1]);
+		A[i]= A[i + 1];
 		i++;
 	}
 	A[N - 1] = element;
