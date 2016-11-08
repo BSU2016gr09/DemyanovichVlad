@@ -1,3 +1,4 @@
+/*расстановка скобок*/
 #include <iostream>
 #include <clocale>
 #include <ctime>
