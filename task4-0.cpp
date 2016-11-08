@@ -1,3 +1,4 @@
+/*рисует график sin(2x)*/
 #include <iostream>
 #include <clocale>
 #include <cmath>
