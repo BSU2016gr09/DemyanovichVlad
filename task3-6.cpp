@@ -1,3 +1,4 @@
+/*польская запись*/
 #include <iostream>
 #include <clocale>
 void initA(char A[], int N);
@@ -37,7 +38,7 @@ void push(double A[], int N, char element)
 	int i = 0;
 	while (i <N - 1)
 	{
-		swap(A[i], A[i%N + 1]);
+		A[i]= A[i+1];
 		i++;
 	}
 	A[N - 1] = element;
@@ -45,12 +46,12 @@ void push(double A[], int N, char element)
 char pop(double A[], int N)
 {
 	int i = N - 1, tmp;
+	tmp = A[i];
 	while (i > 0)
 	{
-		swap(A[i], A[i%N - 1]);
+		A[i]= A[i- 1];
 		i--;
 	}
-	tmp = A[0];
 	A[0] = 0;
 	return(tmp);
 }
