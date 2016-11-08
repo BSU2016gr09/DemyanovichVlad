@@ -1,3 +1,4 @@
+/*–∫–∞—Ä—Ç–æ—á–Ω–∞—è –∏–≥—Ä–∞ –ø—å—è–Ω–∏—Ü–∞*/
 #include <iostream>
 #include <clocale>
 #include <ctime>
@@ -50,8 +51,8 @@ int main()
 	}
 	winPL1 = winPL1 / 50;
 	countOfSteps /= 5000;
-	cout << "ÒÂ‰ÌÂÂ ÍÓÎË˜ÂÒÚ‚Ó ıÓ‰Ó‚=" << countOfSteps;
-	cout << "\nÔÓˆÂÌÚ ÔÓ·Â‰ ÔÂ‚Ó„Ó Ë„ÓÍ‡= " << winPL1 << '%';
+	cout << "—Å—Ä–µ–¥–Ω–µ–µ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ —Ö–æ–¥–æ–≤ –∑–∞ 5000 –∏–≥—Ä=" << countOfSteps;
+	cout << "\n–ø—Ä–æ—Ü–µ–Ω—Ç –ø–æ–±–µ–¥ –ø–µ—Ä–≤–æ–≥–æ –∏–≥—Ä–æ–∫–∞ –∑–∞ 5000 –∏–≥—Ä= " << winPL1 << '%';
 	system("PAUSE");	
 }
 int pop(int A[], int size,int & count)
