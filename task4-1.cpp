@@ -23,7 +23,7 @@ int main()
 	numberInA(n, B, maxCount);
 	while (rez[0] == 0)
 	{
-		sum(rez, A, B, maxCount);
+		sum(rez, A, B, maxCount);//Если в этом цикле будешь печатать очередное число Фибоначчи, то ВНЕЗАПНО 35-е число меньше 34-го  LOL
 		changeA(A, B, maxCount);
 		changeA(B, rez, maxCount);
     }
