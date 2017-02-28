@@ -2,6 +2,8 @@
 #include <clocale>
 #include <ctime>
 #include <cmath>
+void give_memory(int * & ptr, int size);
+void delete_memory(int * & ptr);
 void initRandA(int * ptr, int size);
 void printA(int * ptr, int size);
 double mode(double digit);
@@ -20,8 +22,8 @@ int main() {
     cout<<"Введите количество строчек: ";
     cin>>count;//количество строчек
     cout<<endl;
-    x= new int [count];
-    y= new int [count];
+    give_memory(x, count);
+    give_memory(y, count);
     cout<<"Введите коэфиценты для прямой ax+by+c=0";
     cout<<endl<<"Введите коэфицент а:";
     cin>>a;
@@ -37,8 +39,8 @@ int main() {
     sortA(x, y, a, b, c, count);
     printA(x, count);
     printA(y, count);
-    delete [] x;
-    delete [] y;
+    delete_memory(x);
+    delete_memory(y);
     return 0;
 }
 void initRandA(int * ptr, int size) {
@@ -94,4 +96,16 @@ double mode(double digit) {
     if (digit < 0) digit*=-1;
     
     return digit;
+}
+
+void give_memory(int * & ptr, int size) {
+    
+    try {
+        ptr= new int[size];
+    } catch (...) {
+        cout<<"Failed";
+    }
+}
+void delete_memory(int * & ptr) {
+    delete [] ptr;
 }

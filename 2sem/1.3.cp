@@ -1,6 +1,8 @@
 #include <iostream>
 #include <clocale>
 #include <ctime>
+void give_memory(int * & ptr, int size);
+void delete_memory(int * & ptr);
 void initA(int * ptr, int size);
 void printA(int * ptr, int size);
 void posToEnd(int * ptr, int size);
@@ -11,13 +13,13 @@ int main() {
     srand(time(NULL));
     int size=10;
     int * ptr;
-    ptr= new int[size];
+    give_memory(ptr, size);
     initA(ptr, size);
     printA(ptr, size);
     posToEnd(ptr, size);
     sortNegative(ptr, size);
     printA(ptr, size);
-    delete [] ptr;
+    delete_memory(ptr);
     return 0;
 }
 
@@ -71,4 +73,15 @@ void sortNegative(int * ptr, int size) {
         }
         i++;
     }
+}
+
+void give_memory(int * & ptr, int size) {
+    try {
+        ptr= new int [size];
+    } catch (...) {
+        cout<<"Failed";
+    }
+}
+void delete_memory(int * & ptr) {
+    delete [] ptr;
 }

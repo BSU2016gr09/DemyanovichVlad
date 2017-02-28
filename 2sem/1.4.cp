@@ -8,15 +8,16 @@ void initA(int * ptr, int size);
 void printA(int * ptr, int size);
 int isPrime(int digit);
 void sortPrime(int * ptr, int size);
+void freeA(int * p);
 int main() {
     int * ptr=nullptr;
     int size=10;
-    ptr= new int [size];
+    giveMemory(ptr, size);
     initA(ptr, size);
     printA(ptr, size);
     sortPrime(ptr, size);
     printA(ptr, size);
-    delete [] ptr;
+    freeA(ptr);
     return 0;
 }
 
@@ -80,5 +81,13 @@ void sortPrime(int * ptr, int size) {
 }
 
 void giveMemory(int * & ptr, int size) {
-    ptr= new int[size];
+    try {
+        ptr= new int[size];
+    } catch (...) {
+        cout<<"Not enough memory";
+    }
+}
+
+void freeA(int * p) {
+    delete [] p;
 }
