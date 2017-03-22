@@ -15,7 +15,7 @@ int main(int argc, char * argv[]) {
 		int height = 0;
 		
 			file.seekg(18, ios::beg);
-			// Считываем ширину и высоту изображения (в пикселях)
+			// Г‘Г·ГЁГІГ»ГўГ ГҐГ¬ ГёГЁГ°ГЁГ­Гі ГЁ ГўГ»Г±Г®ГІГі ГЁГ§Г®ГЎГ°Г Г¦ГҐГ­ГЁГї (Гў ГЇГЁГЄГ±ГҐГ«ГїГµ)
 			file.read((char*)&width, sizeof(int));
 
 			file.read((char*)&height, sizeof(int));
