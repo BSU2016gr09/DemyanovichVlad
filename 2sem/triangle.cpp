@@ -7,7 +7,7 @@ class triangle {
 		int x[3];
 		int y[3];
 
-		void culcSides() {
+		void culcSides() {//глагол ВЫЧИСЛИТЬ пишется как cAlculate
 			int j = 0;
 			for (int i = 0; i < 3; i++) {
 				if (i < 2) j = i+1; else j = 0;
@@ -15,18 +15,18 @@ class triangle {
 			}
 		}
 
-		void culcPerimeter() {
+		void culcPerimeter() {//глагол ВЫЧИСЛИТЬ пишется как cAlculate
 			p = 0;
 			for (int i = 0; i < 3; i++) {
 				p += side[i];
 			}
 		}
-		void square() {
+		void square() {//Площадь называется AREA
 			int halfP = p / 2;
 
 			s = sqrt(halfP*(halfP-side[0])*(halfP-side[1])*(halfP-side[2]));
 		}
-		void printT() {
+		void printT() {//Зачем в названии метода буква Т?????
 			cout << "first: "<< side[0] << "  second:  "<< side[1] << "  third:  "<< side[2]<<"square: "<< s;
 		}
 	private:
@@ -36,7 +36,7 @@ class triangle {
 };
 
 int main() {
-	triangle v;
+	triangle v;//объяви несколько треугольников. Присвой одному из них - другой. и т.п....
 	for (int i = 0; i < 3; i++) {
 		cin >> v.x[i] >> v.y[i];
 	}
