@@ -5,7 +5,7 @@
 #include <ctime>
 #include <iomanip>
 using namespace std;
-void give_memory(int ** & ptr, int lines, int columns) {
+void give_memory(int ** & ptr, int lines, int columns) {//НЕ сделано САМОЕ главное. Из за того, что вы неужмно выделили память тут потом в pasteMax вы не можете работать с указателями!!!
     try {
         ptr= new int * [lines];
         for(int i=0; i<lines; i++) {
@@ -66,7 +66,7 @@ void pasteMax(int ** ptr, int lines, int column, int start){
     maxlenght(ptr, lines, column, start);
     int j=start;
     while (i<lines && j<lines && ptr[j][column]>0) {
-        ptr[i][column]=ptr[j][column];
+        ptr[i][column]=ptr[j][column];//ПЛОХО совсем. Так делали в 1м семестре. А надо 1 раз переставить указатели!!!
         i++;
         j++;
     }
