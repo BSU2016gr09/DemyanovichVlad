@@ -14,6 +14,33 @@ public:
         p=0;
         cout<<"constructor is worked"<<endl;
     }
+        triangle& operator =(triangle &other) {
+        cout << "Operator of equality is working\n";
+        this->s = other.s;
+        this->p = other.p;
+        for (int i=0; i<3; i++) {
+            this->side[i]=other.side[i];
+        }
+        return *this;
+    }
+        triangle& operator +(triangle other) {
+        cout << "Operator of addition is working\n";
+        this->s += other.s;
+        this->p += other.p;
+        for (int i=0; i<3; i++) {
+            this->side[i]+=other.side[i];
+        }
+        return *this;
+    }
+        triangle& operator -(triangle other) {
+        cout << "Operator of subtraction is working\n";
+        this->s -= other.s;
+        this->p -= other.p;
+        for (int i=0; i<3; i++) {
+            this->side[i]-=other.side[i];
+        }
+        return *this;
+    }
     ~triangle() {
         cout<<"destructor is worked"<<endl;
     }
