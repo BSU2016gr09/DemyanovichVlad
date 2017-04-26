@@ -1,90 +1,90 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-
 class triangle {
 public:
-    int x[3];//–ü–ª–æ—Ö–æ, —á—Ç–æ —ç—Ç–æ public
-    int y[3];//–ü–ª–æ—Ö–æ, —á—Ç–æ —ç—Ç–æ public
-    triangle () {//–ê –ø–æ—á–µ–º—É –Ω–µ—Ç –∫–æ–Ω—Å—Ç—Ä—É–∫—Ç–æ—Ä–∞ —Å –ø–∞—Ä–∞–º–µ—Ç—Ä–∞–º–∏? –ö–∞–∫ –º–Ω–µ –±–µ–∑ –Ω–µ–≥–æ –≤ main —Å–æ–∑–¥–∞—Ç—å –º–∞—Å—Å–∏–≤, –Ω–∞–ø—Ä–∏–º–µ—Ä, —Ç—Ä–µ—É–≥–æ–ª—å–Ω–∏–∫–æ–≤?
-        s=0;
-        for (int i=0; i<3; i++) {
-            side[i]=0;
-        }
-        p=0;
-        cout<<"constructor is worked"<<endl;
-    }
-        triangle& operator =(triangle &other) {
-        cout << "Operator of equality is working\n";
-        this->s = other.s;
-        this->p = other.p;
-        for (int i=0; i<3; i++) {
-            this->side[i]=other.side[i];
-        }
-        return *this;
-    }
-        triangle& operator +(triangle other) {//–≤–æ—Ç –∏–Ω—Ç–µ—Ä–µ—Å–Ω–æ –º–Ω–µ –∫–∞–∫ –º–∞—Ç–µ–º–∞—Ç–∏–∫—É - —á—Ç–æ —Ç–∞–∫–æ–µ —Å—É–º–º–∞ —Ç—Ä–µ—É–≥–æ–ª—å–Ω–∏–∫–æ–≤ –≤ –≤–∞—à–µ–π –∏–Ω—Ç–µ—Ä–ø—Ä–µ—Ç–∞—Ü–∏–∏????
-        cout << "Operator of addition is working\n";
-        this->s += other.s;
-        this->p += other.p;
-        for (int i=0; i<3; i++) {
-            this->side[i]+=other.side[i];
-        }
-        return *this;
-    }
-        triangle& operator -(triangle other) {//–≤–æ—Ç –∏–Ω—Ç–µ—Ä–µ—Å–Ω–æ –º–Ω–µ –∫–∞–∫ –º–∞—Ç–µ–º–∞—Ç–∏–∫—É - —á—Ç–æ —Ç–∞–∫–æ–µ —Ä–∞–∑–Ω–æ—Å—Ç—å —Ç—Ä–µ—É–≥–æ–ª—å–Ω–∏–∫–æ–≤ –≤ –≤–∞—à–µ–π –∏–Ω—Ç–µ—Ä–ø—Ä–µ—Ç–∞—Ü–∏–∏????
-        cout << "Operator of subtraction is working\n";
-        this->s -= other.s;
-        this->p -= other.p;
-        for (int i=0; i<3; i++) {
-            this->side[i]-=other.side[i];
-        }
-        return *this;
-    }
-    ~triangle() {
-        cout<<"destructor is worked"<<endl;
-    }
-    void calcSides() {//–≥–ª–∞–≥–æ–ª –í–´–ß–ò–°–õ–ò–¢–¨ –ø–∏—à–µ—Ç—Å—è –∫–∞–∫ cAlculate
-        int j = 0;
-        for (int i = 0; i < 3; i++) {
-            if (i < 2) j = i+1; else j = 0; // –∞ –ø—Ä–æ–≤–µ—Ä–∫–∞. —á—Ç–æ —Ç—Ä–µ—É–≥–æ–ª—å–Ω–∏–∫ —Å—É—â–µ—Å—Ç–≤—É–µ—Ç????
-            side[i] = sqrt((this->x[j] - this->x[i])*(this->x[j] - this->x[i]) + (this->y[j] - this->y[i])*(this->y[j] - this->y[i]));
-        }
-    }
-    
-    void calcPerimeter() {//–≥–ª–∞–≥–æ–ª –í–´–ß–ò–°–õ–ò–¢–¨ –ø–∏—à–µ—Ç—Å—è –∫–∞–∫ cAlculate
-        p = 0;
-        for (int i = 0; i < 3; i++) {
-            p += side[i];
-        }
-    }
-    void area() {//–ü–ª–æ—â–∞–¥—å –Ω–∞–∑—ã–≤–∞–µ—Ç—Å—è AREA
-        int halfP = p / 2;
-        
-        s = sqrt(abs(halfP*(halfP-side[0])*(halfP-side[1])*(halfP-side[2])));// –∞ –ø—Ä–æ–≤–µ—Ä–∫–∞. —á—Ç–æ —Ç—Ä–µ—É–≥–æ–ª—å–Ω–∏–∫ —Å—É—â–µ—Å—Ç–≤—É–µ—Ç????
-    }
-    void print() {//–ó–∞—á–µ–º –≤ –Ω–∞–∑–≤–∞–Ω–∏–∏ –º–µ—Ç–æ–¥–∞ –±—É–∫–≤–∞ –¢?????
-        cout << "first: "<< side[0] << "  second:  "<< side[1] << "  third:  "<< side[2]<<" perimeter: "<<p<<" area: "<< s;
-    }
-    
+	int x[3];//œÎÓıÓ, ˜ÚÓ ˝ÚÓ public //‡ ÔÓ˜ÂÏÛ ÍÓÓ‰ËÌ‡Ú˚ ‰ÓÎÊÌ˚ ·˚Ú¸ private?
+	int y[3];//œÎÓıÓ, ˜ÚÓ ˝ÚÓ public //‡ ÔÓ˜ÂÏÛ ÍÓÓ‰ËÌ‡Ú˚ ‰ÓÎÊÌ˚ ·˚Ú¸ private?
+	triangle() {//¿ ÔÓ˜ÂÏÛ ÌÂÚ ÍÓÌÒÚÛÍÚÓ‡ Ò Ô‡‡ÏÂÚ‡ÏË?  ‡Í ÏÌÂ ·ÂÁ ÌÂ„Ó ‚ main ÒÓÁ‰‡Ú¸ Ï‡ÒÒË‚, Ì‡ÔËÏÂ, ÚÂÛ„ÓÎ¸ÌËÍÓ‚?//ËÒÔ‡‚ËÎ
+		s = 0;
+		for (int i = 0; i<3; i++) {
+			side[i] = 0;
+		}
+		p = 0;
+		cout << "constructor is worked" << endl;
+	}
+	triangle(int x0, int x1, int x2, int y0, int y1, int y2) {
+		s = 0;
+		p = 0;
+		x[0] = x0; x[1] = x1; x[2] = x2;
+		y[0] = y0; y[1] = y1; y[2] = y2;
+		cout << "constructor with parametres is worked" << endl;
+	}
+	triangle& operator =(triangle &other) {
+		this->s = other.s;
+		this->p = other.p;
+		for (int i = 0; i<3; i++) {
+			this->side[i] = other.side[i];
+		}
+		return *this;
+	}
+	~triangle() {
+		cout << "destructor is worked" << endl;
+	}
+	void calcSides() {
+		int j = 0;
+		for (int i = 0; i < 3; i++) {
+			if (i < 2) j = i + 1; else j = 0; // ‡ ÔÓ‚ÂÍ‡. ˜ÚÓ ÚÂÛ„ÓÎ¸ÌËÍ ÒÛ˘ÂÒÚ‚ÛÂÚ???? //Í‡Í ÔÓ ÏÌÂ, ÚÓ ÓÌ‡ ÚÛÚ ÌÂ ÌÛÊÌ‡: ‰Îˇ ÔÓ‚ÂÍË Ì‡Ï ÌÛÊÌ˚ ‚ÒÂ 3 ÒÚÓÓÌ˚ (ÓÚÂÁÍ‡ ÔÓÒÚÓÂÌÌ˚ı Ì‡ ÂÂ ‚‚Â‰ÂÌÌ˚ı ÚÓ˜Í‡ı), ‡ ˝Ú‡ Ù-ˆËˇ Ë Ò˜ËÚ‡ÂÚ ˝ÚË ÓÚÂÁÍË.
+			side[i] = sqrt((this->x[j] - this->x[i])*(this->x[j] - this->x[i]) + (this->y[j] - this->y[i])*(this->y[j] - this->y[i]));
+		}
+	}
+	int isExist() {
+		if (side[0] > side[1]); else swap(side[0], side[1]);
+		if (side[0] > side[2]); else swap(side[0], side[2]);
+		if (side[0] < (side[1] + side[2])) return 1; else return 0;
+	}
+	void calcPerimeter() {
+		if (isExist()) {
+			p = 0;
+			for (int i = 0; i < 3; i++) {
+				p += side[i];
+			}
+		}
+		else cout << "triangle not exist" << endl;
+	}
+	void area() {
+		if (isExist()) {
+			int halfP = p / 2;
+			s = sqrt(abs(halfP*(halfP - side[0])*(halfP - side[1])*(halfP - side[2])));// ‡ ÔÓ‚ÂÍ‡. ˜ÚÓ ÚÂÛ„ÓÎ¸ÌËÍ ÒÛ˘ÂÒÚ‚ÛÂÚ???? //ÌÂ ÔÓ‰ÛÏ‡Î //TBD ËÒÔ‡‚ËÎ
+		}
+		else cout << "triangle not exist" << endl;
+	}
+	void print() {
+		if (isExist()) {
+			cout << "first: " << side[0] << "  second:  " << side[1] << "  third:  " << side[2] << " perimeter: " << p << " area: " << s;
+		}
+		else cout << "triangle not exist"<<endl;
+	}
 private:
-    float s;
-    float side[3];
-    float p;
+	float s;
+	float side[3];
+	float p;
 };
 
 int main() {
-    triangle v;//–æ–±—ä—è–≤–∏ –Ω–µ—Å–∫–æ–ª—å–∫–æ —Ç—Ä–µ—É–≥–æ–ª—å–Ω–∏–∫–æ–≤. –ü—Ä–∏—Å–≤–æ–π –æ–¥–Ω–æ–º—É –∏–∑ –Ω–∏—Ö - –¥—Ä—É–≥–æ–π. –∏ —Ç.–ø....
-    triangle a;
-    for (int i = 0; i < 3; i++) {
-        cin >> v.x[i] >> v.y[i];
-    }
-    v.calcSides();
-    v.calcPerimeter();
-    v.area();
-    v.print();
-    a=v;
-    cout<<endl;
-    a.print();
-    return 0;
+	triangle v;//Ó·˙ˇ‚Ë ÌÂÒÍÓÎ¸ÍÓ ÚÂÛ„ÓÎ¸ÌËÍÓ‚. œËÒ‚ÓÈ Ó‰ÌÓÏÛ ËÁ ÌËı - ‰Û„ÓÈ. Ë Ú.Ô....
+	triangle a;
+	triangle triangles[] = { {1,2,3,4,5,6}, {1,2,3,2,5,8} };
+	for (int i = 0; i < 3; i++) {
+		cin >> v.x[i] >> v.y[i];
+	}
+	v.calcSides();
+	v.calcPerimeter();
+	v.area();
+	v.print();
+	a = v;
+	cout << endl;
+	a.print();
+	system("PAUSE");
+	return 0;
 }
